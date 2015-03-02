@@ -1,0 +1,68 @@
+#bcm943143a0usbirdsw_P500 board - officialy known as BCM943143USBIRD_5 rev 02
+vendid=0x14e4
+devid=0x4366
+subvendid=0xa5c
+subdevid=0xbdc
+sromrev=10
+boardnum=${serno}
+boardtype=0x0629
+boardrev=0x1502
+boardflags=0x000
+boardflags2=0x000
+macaddr=00:90:4c:0e:81:23
+ccode=ALL
+cctl=0
+regrev=0
+#
+ledbh0=0xff
+ledbh1=0xff
+ledbh2=0xff
+ledbh3=0xff
+leddc=0xffff
+#
+# disable rx_ant_div and choose ant_1 (tx/rx; rx main) always aa2g=3 => aa2g=1
+aa2g=1
+ag0=2
+ag1=2
+#
+txchain=1
+rxchain=1
+antswitch=0
+#sitting 1.5dB under max power from p519 43142
+maxp2ga0=68
+#
+# pa parameters:
+# -------------
+pa0itssit=0x20
+pa0b0=6022
+pa0b1=-709
+pa0b2=-147
+cckPwrOffset=3
+#
+tssipos2g=0
+extpagain2g=0
+pdetrange2g=0
+triso2g=3
+antswctl2g=0
+#copied from 43142 p519 except that we set delta evm legacy to mcs to 1dB
+cckbw202gpo=0x0000
+legofdmbw202gpo=0x43333333
+mcsbw202gpo=0x63333333
+mcsbw402gpo=0x66666666
+swctrlmap_2g=0x00000000,0x00000000,0x00000000,0x00000000,0x000
+xtalfreq=20000
+
+#
+otpimagesize=154
+tempthresh=120
+temps_period=5
+temp_hysteresis=5
+#END
+#
+#Av/Vmid
+rssismf2g=0x8
+rssismc2g=0x8
+rssisav2g=0x2
+
+# RFPLL loop bandwidth
+loopbw2g=100

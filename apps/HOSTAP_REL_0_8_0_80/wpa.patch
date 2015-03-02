@@ -1,0 +1,41 @@
+Index: libbcmdhd/Makefile_hostapd
+===================================================================
+--- libbcmdhd/Makefile_hostapd	(revision 420338)
++++ libbcmdhd/Makefile_hostapd	(working copy)
+@@ -18,6 +18,8 @@
+ CFLAGS += -I../wpa_supplicant
+ CFLAGS += -DBCM_LINUX_BUILD -DANDROID -DHOSTAPD
+ 
++CFLAGS += -I../libnl-3.2.14/include
++
+ LIB_HOSTAPD = lib_driver_cmd_bcmdhd_hostapd.a
+ ifdef CONFIG_DRIVER_NL80211
+    OBJ_HOSTAPD += driver_cmd_nl80211.o
+Index: libbcmdhd/Makefile_wpa_supplicant
+===================================================================
+--- libbcmdhd/Makefile_wpa_supplicant	(revision 420338)
++++ libbcmdhd/Makefile_wpa_supplicant	(working copy)
+@@ -18,6 +18,7 @@
+ CFLAGS += -I../wpa_supplicant
+ CFLAGS += -DBCM_LINUX_BUILD -DANDROID -DANDROID_P2P
+ 
++CFLAGS += -I../libnl-3.2.14/include
+ LIB_SUPP = lib_driver_cmd_bcmdhd_supplicant.a
+ ifdef CONFIG_DRIVER_NL80211
+    OBJ_SUPP += driver_cmd_nl80211.o
+Index: wpa_supplicant/Makefile
+===================================================================
+--- wpa_supplicant/Makefile	(revision 420338)
++++ wpa_supplicant/Makefile	(working copy)
+@@ -20,6 +20,11 @@
+ LDFLAGS += -L ../libbcmdhd/
+ LIBS += -l_driver_cmd_bcmdhd_supplicant
+ 
++CFLAGS += -I../openssl-1.0.1c/include
++CFLAGS += -I../libnl-3.2.14/include
++LDFLAGS += -L ../openssl-1.0.1c/
++LIBS += -lssl
++
+ -include .config
+ 
+ BINALL=wpa_supplicant wpa_cli

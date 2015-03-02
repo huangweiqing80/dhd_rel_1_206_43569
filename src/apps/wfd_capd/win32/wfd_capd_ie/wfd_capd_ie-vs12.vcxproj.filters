@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\common\wfd_capdie\wfd_capdie_proto.c">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\shared\tutrace.c">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\wfd_capdie\wfadisp.c">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\wfd_capdie\wfd_capdie.c">
+      <Filter>API</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\wfd_capdie\wfd_capdie_proto.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\shared\tutrace.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\HostDecls.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wfadisp.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wfd_capd.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wfd_capdie.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\wfd_capdie\wfd_capdie_lib.h">
+      <Filter>API</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="API">
+      <UniqueIdentifier>{f9f9e933-fc3e-4ec1-81e4-372b673aa43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{04a3ba93-41bd-4509-998c-6a1b2691bd23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

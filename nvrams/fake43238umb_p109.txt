@@ -1,0 +1,225 @@
+# BCM43238umb P105
+#
+# Dual-band selectable
+# ePA + eLNA in 5G
+# eLNA + iPA in 2G
+# Bluetooth added 
+# 
+
+# Board identity settings
+###############################################################
+boardtype=0x066a
+boardrev=0x1109
+boardnum=${serno}
+sromrev=8
+vendid=0x14e4
+subvendid=0xa5c
+subdevid=0xbdc
+devid=0x4346
+wl0id=0x4346
+macaddr=00:90:4C:0C:C${maclo12}
+cctl=0
+ccode=US
+regrev=87
+###############################################################
+
+# Board flags
+###############################################################
+#
+# BFL_BTCOEXIST    = 0x00000001
+# BFL_AFTERBURNER  = 0x00000200
+# BFL_EXTLNA       = 0x00001000
+# BFL_PAREF        = 0x00040000
+# BFL_EXTLNA_5GHz  = 0x10000000
+#
+boardflags=0x10041201
+#
+# decoder:
+#
+# BFL2_BTCLEGACY    = 0x00000080
+# BFL2_ANAPACTRL_5G = 0x00200000
+#
+boardflags2=0x00200080
+###############################################################
+
+# LED settings
+ledbh0=0xff
+ledbh1=0xff
+ledbh2=0xff
+ledbh3=0xff
+leddc=0xffff
+
+# RF control settings
+###############################################################
+
+# RF chain control
+antswitch=0x0
+txchain=0x3
+rxchain=0x3
+parefldovoltage=0x3C
+
+# 2G settings
+aa2g=0x3
+elna2g=1
+antswctl2g=0xf
+extpagain2g=0x2
+pdetrange2g=0x2
+
+# 5G settings
+aa5g=0x3
+elna5g=1
+antswctl5g=0xf
+extpagain5g=0x3
+pdetrange5g=0x9
+
+###############################################################
+
+# antenna gains
+ag0=0x2
+ag1=0x2
+ag2=0xff
+ag3=0xff
+
+tssipos2g=0x1
+triso2g=0x3
+tssipos5g=0x1
+triso5g=0x3
+
+tempthresh=120
+temps_period=5
+temp_hysteresis=5
+
+# Power offsets for 2G
+###############################################################
+cck2gpo=0x0
+ofdm2gpo=0x00000000
+
+# SISO modes offset
+# no offset for low data rates
+mcs2gpo0=0x0000
+# MCS 7 limited to 16.0 dBm (minus 0.5 dB)
+mcs2gpo1=0x1000
+
+# MIMO modes offset
+# no offset for low data rates
+mcs2gpo2=0x0000
+# MCS 15 limited to 16.0 dBm (minux 0.5 dB)
+mcs2gpo3=0x1000
+
+# 40 MHz
+bw40po=0x1
+
+# not used MCS indicies > 15
+mcs2gpo4=0x0000
+mcs2gpo5=0x0000
+mcs2gpo6=0x0000
+mcs2gpo7=0x0000
+###############################################################
+
+# Power offsets for 5G (same as 43238um)
+###############################################################
+ofdm5gpo=0x10000000
+ofdm5glpo=0x20000000
+ofdm5ghpo=0x20000000
+mcs5gpo0=0x0000
+mcs5gpo1=0x1000
+mcs5gpo2=0x0000
+mcs5gpo3=0x1000
+mcs5gpo4=0x0000
+mcs5gpo5=0x1000
+mcs5gpo6=0x0000
+mcs5gpo7=0x1000
+mcs5glpo0=0x0000
+mcs5glpo1=0x2000
+mcs5glpo2=0x0000
+mcs5glpo3=0x2000
+mcs5glpo4=0x0000
+mcs5glpo5=0x4000
+mcs5glpo6=0x0000
+mcs5glpo7=0x4000
+mcs5ghpo0=0x0000
+mcs5ghpo1=0x2000
+mcs5ghpo2=0x0000
+mcs5ghpo3=0x2000
+mcs5ghpo4=0x0000
+mcs5ghpo5=0x2000
+mcs5ghpo6=0x0000
+mcs5ghpo7=0x2000
+###############################################################
+
+# other offsets
+###############################################################
+cddpo=0x0
+stbcpo=0x0
+bwduppo=0x0
+###############################################################
+
+# 2G PA Parameters
+###############################################################
+itt2ga0=0x20
+itt2ga1=0x20
+
+# limited by spectral mask
+maxp2ga0=0x42
+maxp2ga1=0x42
+# 40 MHz set -0.5 dB lower for spectral mask limit
+bw402gpo=0x1
+
+pa2gw0a0=0xFFD3
+pa2gw1a0=0x1636
+pa2gw2a0=0xFB3D
+pa2gw0a1=0xFFAF
+pa2gw1a1=0x15ED
+pa2gw2a1=0xFB2B
+###############################################################
+
+# 5G PA Parameters
+###############################################################
+itt5ga0=0x3e
+itt5ga1=0x3e
+
+#5G PA TSSI parameters
+subband5gver=4
+
+# Low Band CH36-48 5180-5240 MHz
+maxp5gla0=0x44
+maxp5gla1=0x44
+pa5glw0a0=0xFE6C
+pa5glw1a0=0x15B8
+pa5glw2a0=0xFA88
+pa5glw0a1=0xFE76
+pa5glw1a1=0x13F7
+pa5glw2a1=0xFAE2
+
+# Mid Band CH52-64 5260-5320 MHz
+maxp5ga0=0x50
+maxp5ga1=0x50
+pa5gw0a0=0xFE94
+pa5gw1a0=0x18ED
+pa5gw2a0=0xF9E6
+pa5gw0a1=0xFF07
+pa5gw1a1=0x1752
+pa5gw2a1=0xFAB3
+
+# High Band CH100-140 5500-5700 MHz
+maxp5gha0=0x50
+maxp5gha1=0x50
+pa5ghw0a0=0xFE96
+pa5ghw1a0=0x1971
+pa5ghw2a0=0xF9CC
+pa5ghw0a1=0xFE96
+pa5ghw1a1=0x1919
+pa5ghw2a1=0xF9E4
+
+# X1 Band CH149-165 5745-5825 MHz
+maxp5ga3=0x50
+maxp5gla3=0x50
+pa5gw0a3=0xFE81
+pa5gw1a3=0x1969
+pa5gw2a3=0xF9BD
+pa5glw0a3=0xFE7C
+pa5glw1a3=0x18CB
+pa5glw2a3=0xF9DF
+###############################################################
+
+

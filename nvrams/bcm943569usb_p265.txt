@@ -1,0 +1,258 @@
+########################################################
+# 
+# BCM943569usb Reference Board
+# Revision: P265
+# using external 2G LNA and new bcm43569A0 chip iso previous version 4354A1 (P23x)
+# P264-->265 * updated schematics using ES2 2G FEM, no changes nvram file wrt P263
+########################################################
+
+########################################################
+# Board Definitions
+
+sromrev=11
+boardrev=0x1265
+boardtype=0x06e0
+vendid=0x14e4
+devid=0x43a3
+boardnum=${serno}
+
+# Board flags:
+# X BFL_BTCOEXIST          = 0x00000001   This board implements Bluetooth coexistence
+# X BFL_EXTLNA             = 0x00001000   This board has an external LNA (2G)
+#   BFL_FEM_BT             = 0x00400000   This board has shared antenna w/ BT 
+# X BFL_PALDO              = 0x02000000   Power topology uses PALDO ? - CHECK
+#   BFL_EXTLNA_5GHz        = 0x10000000   Board has an external LNA in 5GHz band
+boardflags=0x02001001
+
+# Board flags 2:
+#   BFL2_BT_SHARE_ANT0     = 0x00800000   share core0 antenna with BT
+#   BFL2_LNA1BYPFORTR2G    = 0x40000000   acphy, enable lna1 bypass for clip gain, 2 [NOT USED]
+#   BFL2_LNA1BYPFORTR5G    = 0x80000000   acphy, enable lna1 bypass for clip gain, 5 [NOT USED]
+boardflags2=0x00000000
+
+# Board flags 3:
+# X BFL3_RCAL_WAR          = 0x00000008   acphy rcal war active on this board (mainly for 4335a0)
+# X BFL3_FEMTBL_FROM_NVRAM = 0x00000100   acphy, femctrl table is read from nvram 
+boardflags3=0x40000108
+
+ccode=0
+regrev=0
+macaddr=00:90:4C:0C:C${maclo12}
+xtalfreq=40000
+otpimagesize=502
+nocrc=1
+manfid=0x2d0
+#prodid=0x052e
+muxenab=0x1
+########################################################
+
+
+########################################################
+# RF Control Definitions
+
+antswitch=0
+rxchain=3
+txchain=3
+aa2g=3
+aa5g=3
+femctrl=10
+
+# antenna gain per core g-band
+agbg0=2
+agbg1=2
+
+# antenna gain per core a-band
+aga0=2
+aga1=2
+
+# RFSWCTRL for sky85203 FEM
+#            WL_TX,     WL_RX,     WL_RX_ATTN, BT_TX_RX, WL_MASK
+swctrlmap_2g=0x280a280a,0x26322632,0x24222422,0x00000000,0x000000ff
+swctrlmap_5g=0x40014001,0x280a280a,0x40014001,0x00000000,0x000000ff
+
+swctrlmapext_2g=0x00000000,0x00000000,0x00000000,0x000000,0x003
+swctrlmapext_5g=0x00000000,0x00000000,0x00000000,0x000000,0x003
+########################################################
+
+# Bypass offsetting PAPD_EPS_TABLE_PER_TX_INDEX feature
+epsdelta2g0=0,-1,0,0,0,0,0,0
+epsdelta2g1=0,-1,0,0,0,0,0,0
+
+########################################################
+# Rx gain and RSSI parameters
+#
+# TRISO is in 2 dB units with 8 dB offset, so triso = 2*<val> + 8
+# eLNA gain is in 2 dB units with 6 dB offset, so eLNA = 2 *<val> + 6
+# rssicorrnorm_cX=BW20,BW40
+# rssicorrnorm5g_cX=Low BW20,Low BW40,Low BW80,Mid BW20,Mid BW40,Mid BW80,High BW20,High BW40,High BW80,X1 BW20,X1 BW40,X1 BW80
+#                   Low: < 5170 MHz, Mid: < 5250 MHz, High < 5500 MHz, X1 > 5500 MHz
+
+# Default so do not set:
+#rxgaincal_rssical=0
+#rssi_cal_rev=0
+
+# 2G: eLNA gain is 16 dB, use LNA bypass instead of TRISO with a 22 dB step
+rxgains2gelnagaina0=4
+rxgains2gelnagaina1=4
+
+rxgains2gtrisoa0=7
+rxgains2gtrisoa1=7
+
+rxgains2gtrelnabypa0=1
+rxgains2gtrelnabypa1=1
+
+rssicorrnorm_c0=3,3
+rssicorrnorm_c1=3,3
+
+# 5G Low band: TRISO = 28 dB
+rxgains5gtrisoa0=10
+rxgains5gtrisoa1=10
+
+rxgains5gtrelnabypa0=0
+rxgains5gtrelnabypa1=0
+
+# 5G Mid band: TRISO = 26 dB
+rxgains5gmtrisoa0=9
+rxgains5gmtrisoa1=9
+
+rxgains5gmtrelnabypa0=0
+rxgains5gmtrelnabypa1=0
+
+# 5G High band: TRISO = 30 dB
+rxgains5ghtrisoa0=11
+rxgains5ghtrisoa1=11
+
+rxgains5ghtrelnabypa0=0
+rxgains5ghtrelnabypa1=0
+
+# BW20,BW40,BW80  <5170|<5250|<5500|>=5500
+rssicorrnorm5g_c0=0,0,0,0,0,0,0,0,0,0,0,0
+rssicorrnorm5g_c1=0,0,0,0,0,0,0,0,0,0,0,0
+
+########################################################
+
+
+########################################################
+# 20 MHz in 40 MHz Power Offsets and Duplicate Modes
+# 2G and 5G bands
+
+sb20in40hrpo=0x0
+sb20in40lrpo=0x0
+
+dot11agduphrpo=0x0
+dot11agduplrpo=0x0
+########################################################
+
+
+########################################################
+# 2G TSSI / PA Parameters
+
+tworangetssi2g=0
+tssipos2g=1
+extpagain2g=2
+pdgain2g=2
+
+# 2G Max Power
+maxp2ga0=60
+maxp2ga1=60
+
+# 2G PA Parameters *** from LabNotebook 43569A0_013 01/07/2014:
+#pa2ga0=-146,5762,-659
+#pa2ga1=-160,5764,-679
+pa2ga0=-123,6065,-683
+pa2ga1=-108,6356,-703
+
+# 2G Power Offsets
+cckbw202gpo=0x0000
+cckbw20ul2gpo=0x0000
+mcsbw202gpo=0xaa642000
+mcsbw402gpo=0xaa642000
+dot11agofdmhrbw202gpo=0x8642
+ofdmlrbw202gpo=0x0000
+
+########################################################
+
+
+# AVVmid 2GHz and 5GHz
+AvVmid_c0=2,140,2,145,2,145,2,145,2,145
+AvVmid_c1=2,140,2,145,2,145,2,145,2,145
+AvVmid_c2=0,0,0,0,0,0,0,0,0,0
+
+
+########################################################
+# 5G TSSI / PA Parameters
+
+tworangetssi5g=0
+tssipos5g=1
+extpagain5g=2
+subband5gver=0x4
+pdgain5g=2
+
+# 5G Max Powers
+maxp5ga0=60,60,60,60
+maxp5ga1=60,60,60,60
+
+# 5G PA Parameters *** from LabNotebook 43569A0_013 01/07/2014:
+#pa5ga0=-199,5990,-744,-193,6012,-743,-188,5935,-739,-177,6096,-753
+#pa5ga1=-205,5656,-713,-200,5713,-717,-183,6018,-748,-177,6115,-755 
+pa5ga0=-172,5130,-638,-168,5126,-634,-153,5059,-624,-161,4870,-618
+pa5ga1=-161,5268,-652,-167,5328,-661,-168,5508,-678,-163,5547,-682 
+
+
+# 5G Power Offsets
+mcsbw205glpo=0xaa642000
+mcsbw405glpo=0xaa642000
+mcsbw805glpo=0xaa642000
+mcsbw1605glpo=0xaa642000
+mcsbw205gmpo=0xaa642000
+mcsbw405gmpo=0xaa642000
+mcsbw805gmpo=0xaa642000
+mcsbw1605gmpo=0xaa642000
+mcsbw205ghpo=0xaa642000
+mcsbw405ghpo=0xaa642000
+mcsbw805ghpo=0xaa642000
+mcsbw1605ghpo=0xaa642000
+mcslr5glpo=0x0000
+mcslr5gmpo=0x0000
+mcslr5ghpo=0x0000
+
+sb20in80and160lr5glpo=0x0
+sb40and80lr5glpo=0x0
+sb20in80and160lr5gmpo=0x0
+sb40and80lr5gmpo=0x0
+sb20in80and160lr5ghpo=0x0
+sb40and80lr5ghpo=0x0
+
+sb20in80and160hr5glpo=0x0
+sb40and80hr5glpo=0x0
+sb20in80and160hr5gmpo=0x0
+sb40and80hr5gmpo=0x0
+sb20in80and160hr5ghpo=0x0
+sb40and80hr5ghpo=0x0
+
+pdoffset40ma0=0x0000
+pdoffset80ma0=0x0000
+pdoffset40ma1=0x0000
+pdoffset80ma1=0x0000
+
+########################################################
+
+
+########################################################
+# Temperature Values
+
+tempthresh=255
+tempoffset=255
+rawtempsense=0x1ff
+
+phycal_tempdelta=255
+temps_period=15
+temps_hysteresis=15
+
+########################################################
+
+
+
+
+
+

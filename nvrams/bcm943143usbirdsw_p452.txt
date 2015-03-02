@@ -1,0 +1,72 @@
+#bcm943143a0usbirdsw_P452 board - officialy BCM943143USBIRD_4 rev_52
+vendid=0x14e4
+devid=0x4366
+subvendid=0xa5c
+subdevid=0xbdc
+sromrev=10
+boardnum=${serno}
+boardtype=0x0629
+boardrev=0x1452
+boardflags=0x000
+boardflags2=0x000
+macaddr=00:90:4c:0e:81:23
+ccode=ALL
+cctl=0
+regrev=0
+#
+ledbh0=0xff
+ledbh1=0xff
+ledbh2=0xff
+ledbh3=0xff
+leddc=0xffff
+#
+# disable rx_ant_div and choose ant_1 (tx/rx; rx main) always aa2g=3 => aa2g=1
+aa2g=1
+ag0=2
+ag1=2
+#
+txchain=1
+rxchain=1
+antswitch=0
+#
+# pa parameters: set maxp2ga0=82 first and then make pa0itssit the same value 
+# -------------
+pa0itssit=82
+pa0b0=6022
+pa0b1=-709
+pa0b2=-147
+cckPwrOffset=3
+#
+tssipos2g=0
+extpagain2g=0
+pdetrange2g=0
+triso2g=3
+antswctl2g=0
+#for output power limits pleas consult Lab Notebook 83
+maxp2ga0=82
+mcsbw202gpo=0x75322222
+mcsbw402gpo=0x97544444
+legofdmbw202gpo=0x53100000
+cckbw202gpo=0x3333
+
+#copy from nvram for HP boards whcih use external diverstiy switch
+swctrlmap_2g=0x0a050a05,0x0a050a05,0x00000000,0x00000000,0x000
+xtalfreq=20000
+
+#
+otpimagesize=154
+tempthresh=120
+temps_period=5
+temp_hysteresis=5
+#END
+#
+#Av/Vmid
+rssismf2g=0x8
+rssismc2g=0x8
+rssisav2g=0x2
+
+# RFPLL loop bandwidth
+loopbw2g=100
+
+# Tx ALPF
+txalpfpu=1

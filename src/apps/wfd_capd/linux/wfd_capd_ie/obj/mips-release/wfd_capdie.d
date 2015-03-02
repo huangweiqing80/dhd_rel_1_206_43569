@@ -1,0 +1,36 @@
+obj/mips-release/wfd_capdie.o: \
+ ../../../../apps/wfd_capd/common/wfd_capdie/wfd_capdie.c \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/stdlib.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/features.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/uClibc_config.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/sys/cdefs.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../lib/gcc/mipsel-linux-uclibc/4.5.3/include/stddef.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/sys/types.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/types.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/wordsize.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/typesizes.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/pthreadtypes.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/endian.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/endian.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/byteswap.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/byteswap.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/byteswap-common.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/sgidefs.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/time.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/sys/select.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/select.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/sigset.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/time.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/sys/sysmacros.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/alloca.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/string.h \
+ ../../../../p2p/p2plib/include/BcmP2PAPI.h \
+ /projects/hnd_tools/media/stbgcc-4.5.3-2.1/bin/../mipsel-linux-uclibc/sys-root/usr/include/bits/uClibc_clk_tck.h \
+ ../../../../apps/wfd_capd/common/shared/tutrace.h \
+ ../../../../include/typedefs.h ../../../../include/bcmdefs.h \
+ ../../../../apps/wfd_capd/include/wfd_capdie.h \
+ ../../../../apps/wfd_capd/include/wfd_capd.h \
+ ../../../../apps/wfd_capd/common/wfd_capdie/wfd_capdie_lib.h \
+ ../../../../apps/wfd_capd/common/wfd_capdie/wfd_capdie_proto.h \
+ ../../../../include/packed_section_start.h \
+ ../../../../include/packed_section_end.h
