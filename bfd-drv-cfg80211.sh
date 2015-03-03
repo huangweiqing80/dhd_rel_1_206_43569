@@ -37,7 +37,7 @@ elif [ "${TARGETARCH}" == arm ] ; then
 	elif [ "${TARGETMACH}" == armle ] ; then
 		export BUILDCFG=${BUILDCFG_COMMON}
 		export STBLINUX=1
-		export CROSS_COMPILE=arm-linux-	
+		#export CROSS_COMPILE=arm-linux-	
 	else
 		echo "TARGETARCH==${TARGETARCH}"
 		echo "TARGETMACH==${TARGETMACH} undefined"

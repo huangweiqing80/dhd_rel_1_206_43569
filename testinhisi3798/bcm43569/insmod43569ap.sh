@@ -1,0 +1,1 @@
+./bcmdl -n ./bcm943569usb_p360_update.txt ./fw_569a2_cusb.bin.trx && insmod ./bcmdhd.ko op_mode=2

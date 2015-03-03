@@ -1,0 +1,1 @@
+wpa_supplicant -iwlan0 -Dnl80211 -c./wpa_supplicant.conf &

@@ -1,5 +1,42 @@
 
 *******************************************************************************************************
+F2                           Yang Feng                                    20150303
+*******************************************************************************************************
+Commit reason:
+1). Add built bcm43569 drvier modules and tools for platform HI3798MV100. 
+3.10.0
+
+2). Add lib and tools to build bcmdl successfully.
+src/usbdev/usbdl/Makefile bfd-app-bcmdl-hisiott.sh
+src/usbdev/libusb-1.0.9(1).tar.bz2 src/usbdev/libusb-1.0.9
+src/usbdev/libusb-compat-0.1.3.tar.bz2 src/usbdev/libusb-compat-0.1.3/
+
+3).Commit firmware and nvram I got from Andy
+fw_bcm43569a0.bin 43569a2-roml 
+
+4).Add tools to build kernel module and app for platform HI3798MV100. 
+bfd-app-bcmdl-hisiott.sh setenv-android-hi3798.sh
+5).Add test instructions: testinhisi3798
+
+Added files:
+3.10.0
+bfd-app-bcmdl-hisiott.sh
+firmware/43569a0-roml/fw_bcm43569a0.bin
+firmware/43569a2-roml
+nvrams/bcm943569usb_p360_update.txt
+setenv-android-hi3798.sh
+src/usbdev/libusb-1.0.9(1).tar.bz2
+src/usbdev/libusb-1.0.9
+src/usbdev/libusb-compat-0.1.3.tar.bz2
+src/usbdev/libusb-compat-0.1.3
+testinhisi3798
+
+Modified files:
+bfd-drv-cfg80211.sh
+src/usbdev/usbdl/Makefile
+
+
+*******************************************************************************************************
 F1                           Yang Feng                                    20150302
 *******************************************************************************************************
 Commit reason:

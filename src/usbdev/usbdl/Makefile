@@ -38,13 +38,23 @@ ifeq ($(TARGETENV), linux)
 	LDFLAGS += $(CROSS_LD_PATH)
 endif
 
+ifeq ($(TARGETENV), linuxarm)
+	OBJECTS += $(ObjPfx)usb_linux.o
+	COMPILE = $(CC)
+	CLEAN = clean_linux
+#	CFLAGS += -I../libusb/include -isystem ../libusb/include 
+	CFLAGS +=-isystem $(LIBUSB_COMPACT_PATH)/install/include 
+	LDFLAGS += $(CROSS_LD_PATH)
+	LDFLAGS += -L$(LIBUSB_PATH)/install/lib
+	LIBS =$(LIBUSB_COMPACT_PATH)/install/lib/libusb.a $(LIBUSB_PATH)/install/lib/libusb-1.0.a  -lpthread -lrt
+endif
+
 ifeq ($(TARGETENV), linuxmips_be)
 	OBJECTS += $(ObjPfx)usb_linux.o
 	COMPILE = mips-linux-gcc
 	LIBS := -L$(LIBUSB_PATH)/.libs $(LIBUSB_PATH)/.libs/libusb.a
 	CFLAGS += -I$(LIBUSB_PATH) -DIL_BIGENDIAN
 endif
-
 
 ifeq ($(TARGETENV), linuxmips)
 	TARGET_PREFIX := mipsel-linux-
