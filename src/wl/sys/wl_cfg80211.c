@@ -73,6 +73,11 @@
 #endif /* !WL_ENABLE_P2P_IF && !WL_CFG80211_P2P_DEV_IF */
 #endif /* WL11U */
 
+/*Feng added, no INIT_COMPLETION definition in some kernel header file completion.h, why?*/
+/*#ifndef INIT_COMPLETION
+#define INIT_COMPLETION(x)	((x).done = 0)
+#endif
+*/
 
 #define IW_WSEC_ENABLED(wsec)   ((wsec) & (WEP_ENABLED | TKIP_ENABLED | AES_ENABLED))
 
@@ -10072,7 +10077,8 @@ wl_notify_rx_mgmt_frame(struct bcm_cfg80211 *cfg, bcm_struct_cfgdev *cfgdev,
 		}
 	}
 
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 14, 0))
+/*#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 14, 0))*/  /*Feng, It seems this api has been changed since 3.13.0*/
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 13, 0))
 	cfg80211_rx_mgmt(cfgdev, freq, 0,  mgmt_frame, mgmt_frame_len, 0, GFP_ATOMIC);
 #elif (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 4, 0)) || \
 	defined(WL_COMPAT_WIRELESS)

@@ -128,6 +128,10 @@ ifeq ($(WLTEST),1)
 	DFLAGS += -DDHD_SPROM
 endif
 
+ifeq ($(TARGETLINUXOS),ubuntu)
+	DFLAGS += -DLINUX_OS_UBUNTU
+endif
+
 # Past 2.6.29 kernels, arch specific bits are re-organized in linux kernel. So
 # append new include paths to existing ones to get 2.6.29+ kernels compile
 

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ "${CHIPVER}" == 43236b ] || [ "${CHIPVER}" == 43238b ] ; then
+if [ "${TARGETLINUXOS}" == ubuntu ] ; then
+	export BUILDCFG_COMMON=dhd-cdc-usb-cfg80211-gpl
+elif [ "${CHIPVER}" == 43236b ] || [ "${CHIPVER}" == 43238b ] ; then
 	export BUILDCFG_COMMON=dhd-cdc-usb-android-stb-jellybean-cfg80211-noproptxstatus
 elif [ "${CHIPVER}" == 43242a1 ] ; then
 	export BUILDCFG_COMMON=dhd-cdc-usb-android-stb-jellybean-cfg80211-comp
