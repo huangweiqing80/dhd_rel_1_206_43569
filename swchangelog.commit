@@ -1,5 +1,19 @@
 
 *******************************************************************************************************
+F4                           Yang Feng                                    20150803
+*******************************************************************************************************
+Commit reason:
+1). to build bcmdl on platform ubuntu
+2). Add driver for platform amlogic S812 (Not verified)2). Add driver for platform amlogic S812 (Not verified)
+Added files:
+bfd-app-bcmdl-x86.sh
+setenv-android-amlogics812.sh
+src/usbdev/libusb-1.0.9.tar.bz2
+
+Deleted files:
+src/usbdev/libusb-1.0.9(1).tar.bz2
+
+*******************************************************************************************************
 F3                           Yang Feng                                    20150616
 *******************************************************************************************************
 Commit reason:
