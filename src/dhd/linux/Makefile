@@ -116,6 +116,8 @@ vpath %.c $(addprefix $(WLAN_SrcBaseR)/,dhd/sys dhd/debugger bcmsdio/sys) \
 DFLAGS :=
 CFILES :=
 
+ifeq ($(PLATFORM),XILINX_ZYNQ_7000)
+endif
 # basic options (defines in DFLAGS, includes in IFLAGS)
 DFLAGS += -DLINUX -DSRCBASE=\"$(WLAN_SrcBaseA)\" -DBCMDRIVER -DBCMDONGLEHOST
 DFLAGS += -DUNRELEASEDCHIP -DBCMDMA32

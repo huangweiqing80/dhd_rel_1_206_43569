@@ -4172,8 +4172,10 @@ dbus_get_fw_nvfile(int devid, uint8 **fw, int *fwlen, int type, uint16 boardtype
 			return NULL;
 		}
 		/* load board specific nvram file */
-		snprintf(file_name, sizeof(file_name), "%s-%2x-%2x.nvm", fw_name,
-			boardtype, boardrev);
+	//	snprintf(file_name, sizeof(file_name), "%s-%2x-%2x.nvm", fw_name,
+	//		boardtype, boardrev);
+	        /*modifyed by hwd*/
+		snprintf(file_name, sizeof(file_name), "%s.nvm", fw_name);
 		err = request_firmware(&firmware, file_name, &g_probe_info.usb->dev);
 		if (err) {
 			/* board specific file missing - load the generic nvram file */
