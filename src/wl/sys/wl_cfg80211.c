@@ -7532,14 +7532,13 @@ wl_cfg80211_del_station(
 }
 #endif
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 18, 0))   //modifyed by hwd 
-static s32
-wl_cfg80211_change_station(
+static s32 wl_cfg80211_change_station(
 	struct wiphy *wiphy,
 	struct net_device *dev,
 	const u8 *mac,
 	struct station_parameters *params)
 #else
-wl_cfg80211_change_station(
+static s32 wl_cfg80211_change_station(
 	struct wiphy *wiphy,
 	struct net_device *dev,
 	u8 *mac,
@@ -8597,8 +8596,9 @@ static s32 wl_setup_wiphy(struct wireless_dev *wdev, struct device *sdiofunc_dev
 /*add by hwd*/
 int wl_verbose_detach(struct wiphy *wiphy)
 {
-
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 11, 0))
 	wiphy->wowlan_config = NULL;
+#endif
 	return 0;
 }
 /*end add by hwd*/
