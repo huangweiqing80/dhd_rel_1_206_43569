@@ -36,10 +36,10 @@ export TARGETENV=linuxarm_le
 export CC=arm-hisiv100nptl-linux-gcc
 export STRIP=arm-hisiv100nptl-linux-strip
 export CROSS_COMPILE=arm-hisiv100nptl-linux-
-export HOST=arm-hisiv100nptl-linux
+export HOST=arm-linux
 
 ###################################################################
 # DO NOT MODIFY BELOW THIS LINE
 ###################################################################
 source ./setenv.sh
-source ./setenv-for-libnl-openssl.sh
+source ./libnl-openssl-config.sh

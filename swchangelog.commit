@@ -1,4 +1,27 @@
 *******************************************************************************************************
+F8                           Yang Feng                                    20151201
+*******************************************************************************************************
+Commit reason:
+ Optimize the wpa_supplicant build scripts for arm and x86 platform
+
+Modified files:
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-hi3535.sh
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-hi3536.sh
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-mstar628.sh
+
+Deleted files:
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-hi3536.txt
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-mstar628.txt
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-ubuntu-x86.txt
+
+Added files:
+apps/HOSTAP_REL_0_8_0_80/build-arm.sh
+apps/HOSTAP_REL_0_8_0_80/build-x86.sh
+apps/HOSTAP_REL_0_8_0_80/libnl-openssl-config-x86.sh
+apps/HOSTAP_REL_0_8_0_80/libnl-openssl-config.sh
+apps/HOSTAP_REL_0_8_0_80/readme-build.txt 
+ 
+*******************************************************************************************************
 F7                           Yang Feng                                    20151201
 *******************************************************************************************************
 Commit reason:
