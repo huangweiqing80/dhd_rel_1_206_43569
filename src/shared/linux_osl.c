@@ -54,6 +54,9 @@ extern spinlock_t l2x0_reg_lock;
 #define BCM_MEM_FILENAME_LEN	24		
 #define DUMPBUFSZ 1024
 
+/*Some kernel not define PCI related functions, so insmod bcmdhd.ko will cause unknown symbols error*/
+#define ITON_COMMENT_PCI_FUNCS
+
 #ifdef CONFIG_DHD_USE_STATIC_BUF
 #define DHD_SKB_HDRSIZE		336
 #define DHD_SKB_1PAGE_BUFSIZE	((PAGE_SIZE*1)-DHD_SKB_HDRSIZE)
@@ -972,6 +975,7 @@ osl_pktfree_static(osl_t *osh, void *p, bool send)
 }
 #endif 
 
+#ifndef ITON_COMMENT_PCI_FUNCS
 uint32
 osl_pci_read_config(osl_t *osh, uint offset, uint size)
 {
@@ -1065,6 +1069,7 @@ osl_pci_device(osl_t *osh)
 
 	return osh->pdev;
 }
+#endif
 
 static void
 osl_pcmcia_attr(osl_t *osh, uint offset, char *buf, int size, bool write)

@@ -1,4 +1,14 @@
 *******************************************************************************************************
+F9                           Yang Feng                                    20151201
+*******************************************************************************************************
+Commit reason:
+Add macro to comment "pci_bus_read_config_dword etc. unknown symbol error"
+Notes: If "insmod bcmdhd.ko" cause pci_.... unknown symbol error, please define ITON_COMMENT_PCI_FUNCS in file linux_osl.c
+
+Modified files:
+src/shared/linux_osl.c
+
+*******************************************************************************************************
 F8                           Yang Feng                                    20151201
 *******************************************************************************************************
 Commit reason:
