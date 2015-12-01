@@ -1549,7 +1549,7 @@ static int wpa_cli_cmd_interface(struct wpa_ctrl *ctrl, int argc, char *argv[])
 	os_free(ctrl_ifname);
 	ctrl_ifname = os_strdup(argv[0]);
 
-	if (wpa_cli_open_connection(ctrl_ifname, 1)) {
+	if (0==wpa_cli_open_connection(ctrl_ifname, 1)) {
 		printf("Connected to interface '%s.\n", ctrl_ifname);
 	} else {
 		printf("Could not connect to interface '%s' - re-trying\n",

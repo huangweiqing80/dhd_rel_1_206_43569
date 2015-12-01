@@ -1,4 +1,28 @@
 *******************************************************************************************************
+F7                           Yang Feng                                    20151201
+*******************************************************************************************************
+Commit reason:
+  Merge wpa_supplicant related components from dhd_rel_1_141
+
+Modified files:
+apps/HOSTAP_REL_0_8_0_80/hostapd/.config
+apps/HOSTAP_REL_0_8_0_80/src/drivers/driver_nl80211.c
+apps/HOSTAP_REL_0_8_0_80/wpa_supplicant/Makefile
+apps/HOSTAP_REL_0_8_0_80/wpa_supplicant/wpa_cli.c
+
+Added files:
+apps/HOSTAP_REL_0_8_0_80/OPENSSL/
+apps/HOSTAP_REL_0_8_0_80/libnl-3.2.14.tar.gz
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-hi3536.txt
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-mstar628.txt
+apps/HOSTAP_REL_0_8_0_80/readme-build-for-ubuntu-x86.txt
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-hi3535.sh
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-hi3536.sh
+apps/HOSTAP_REL_0_8_0_80/setenv-arm-mstar628.sh
+apps/HOSTAP_REL_0_8_0_80/setenv-for-libnl-openssl.sh
+setenv-android-mstar628.sh  
+  
+*******************************************************************************************************
 F6                           Yang Feng                                    20151010
 *******************************************************************************************************
 Commit reason:

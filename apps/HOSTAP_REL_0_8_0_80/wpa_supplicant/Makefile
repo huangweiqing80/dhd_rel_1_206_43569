@@ -20,10 +20,13 @@ CFLAGS += -DP2P_CONCURRENT_SEARCH_DELAY=0
 LDFLAGS += -L ../libbcmdhd/
 LIBS += -l_driver_cmd_bcmdhd_supplicant
 
-CFLAGS += -I../openssl-1.0.1c/include
+CFLAGS += -I../OPENSSL/openssl-1.0.1g/include
 CFLAGS += -I../libnl-3.2.14/include
-LDFLAGS += -L ../openssl-1.0.1c/
+LDFLAGS += -L ../OPENSSL/openssl-1.0.1g/
+LDFLAGS += -L ../libnl-3.2.14/
 LIBS += -lssl
+LDFLAGS += -lm -ldl
+LIBS += -lm -ldl
 
 -include .config
 
@@ -1445,6 +1448,8 @@ ifdef NEED_OFFCHANNEL
 OBJS += offchannel.o
 CFLAGS += -DCONFIG_OFFCHANNEL
 endif
+LIBS +=-lm -ldl
+LDFLAGS +=-lm -ldl
 
 OBJS += ../src/drivers/driver_common.o
 OBJS_priv += ../src/drivers/driver_common.o
@@ -1560,7 +1565,7 @@ preauth_test: $(OBJS_t2)
 	@$(E) "  LD " $@
 
 wpa_passphrase: $(OBJS_p)
-	$(Q)$(LDO) $(LDFLAGS) -o wpa_passphrase $(OBJS_p) $(LIBS_p)
+	$(Q)$(LDO) $(LDFLAGS) -o wpa_passphrase $(OBJS_p) $(LIBS_p) -lm -ldl
 	@$(E) "  LD " $@
 
 wpa_cli: $(OBJS_c)
