@@ -5,9 +5,9 @@
 ###################################################################
 # setting the path for cross compiler
 ###################################################################
-export LINUXVER=3.1.10
-export KERNELDIR=/home/customer/Eden/3.1.10_Nike_TVOS/3.1.10
-export CROSSTOOL=/opt/arm-2011.03/bin
+export LINUXVER=4.4.16
+export KERNELDIR=/data/msl/work/Android/Rockchip/X3399/x3399_marshmallow/kernel
+export CROSSTOOL=/data/msl/work/Android/Rockchip/X3399/x3399_marshmallow/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
 export PATH=${CROSSTOOL}:$PATH
 export LINUXDIR=${KERNELDIR}
 export ROOTDIR=${KERNELDIR}/uclinux-rootfs
@@ -28,12 +28,12 @@ export USBSHIM=1
 # TARGETMACH=mipsel is LE
 ###################################################################
 export ARCH=arm
-export TARGETMACH=armel
+export TARGETMACH=armle
 export TARGETARCH=arm
 export TARGETENV=linuxarm
-export CC=arm-none-linux-gnueabi-gcc
+export CC=aarch64-linux-android-gcc
 export STRIP=arm-none-linux-gnueabi-strip
-export CROSS_COMPILE=arm-none-linux-gnueabi-	
+export CROSS_COMPILE=/data/msl/work/Android/Rockchip/X3399/x3399_marshmallow/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/arm-none-linux-gnueabi-	
 
 
 ###################################################################

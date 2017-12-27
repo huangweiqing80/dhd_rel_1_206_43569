@@ -8572,7 +8572,7 @@ static s32 wl_setup_wiphy(struct wireless_dev *wdev, struct device *sdiofunc_dev
 
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(3, 13, 0)) || defined(WL_VENDOR_EXT_SUPPORT)
 	WL_ERR(("Registering Vendor80211)\n"));
-	err = wl_cfgvendor_attach(wdev->wiphy);
+	//err = wl_cfgvendor_attach(wdev->wiphy);
 	if (unlikely(err < 0)) {
 		WL_ERR(("Couldn not attach vendor commands (%d)\n", err));
 	}
@@ -8613,7 +8613,7 @@ static void wl_free_wdev(struct bcm_cfg80211 *cfg)
 	wiphy = wdev->wiphy;
 
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(3, 13, 0)) || defined(WL_VENDOR_EXT_SUPPORT)
-	wl_cfgvendor_detach(wdev->wiphy);
+	//wl_cfgvendor_detach(wdev->wiphy);
 #endif /* if (LINUX_VERSION_CODE > KERNEL_VERSION(3, 13, 0)) || defined(WL_VENDOR_EXT_SUPPORT) */
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(3, 18, 0)) || defined(CONFIG_PM)
 	wl_verbose_detach(wdev->wiphy);
